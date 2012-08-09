@@ -15,11 +15,11 @@ This is based on RSpec let(). Tutorials and documentation are forthcoming.
 INSTALLING
 ====
 
-  gem install rlet
+    gem install rlet
 
 Or from bundler
 
-  gem 'rlet'
+    gem 'rlet'
 
 
 USAGE
@@ -27,27 +27,27 @@ USAGE
 
 The gems contain two modules, Let and Concern. You can use them like so:
 
-  require 'rlet'
-
-  class ContactsController
-    include Let
-    include RestfulResource
-  
-    let(:model) { Contact }
-  
-    def show
-      respond_with resource
+    require 'rlet'
+    
+    class ContactsController
+      include Let
+      include RestfulResource
+    
+      let(:model) { Contact }
+    
+      def show
+        respond_with resource
+      end
     end
-  end
-  
-  module RestfulResource
-    extend Concern
-  
-    included do
-      let(:resource) { model.find(id) }
-      let(:id) { params[:id]
+    
+    module RestfulResource
+      extend Concern
+    
+      included do
+        let(:resource) { model.find(id) }
+        let(:id) { params[:id]
+      end
     end
-  end
 
 
 Concern is embedded from ActiveSupport. If ActiveSupport::Concern is loaded, it will use that. This
