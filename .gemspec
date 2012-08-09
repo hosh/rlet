@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "rlet"
-  s.version     = "0.5"
+  s.version     = "0.5.1"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ho-Sheng Hsiao"]
   s.email       = ["hosh@opscode.com"]
