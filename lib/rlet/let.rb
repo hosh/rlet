@@ -8,7 +8,6 @@ module Let
       define_method(name) do
         __memoized[name] ||= instance_eval(&block)
       end
-      protected(name)
     end
   end
 

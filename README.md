@@ -14,6 +14,8 @@ This is based on RSpec let(). Tutorials and documentation are forthcoming.
 
 The gems contain two modules, Let and Concern. You can use them like so:
 
+  require 'rlet'
+
   class ContactsController
     include Let
     include RestfulResource
