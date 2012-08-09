@@ -12,6 +12,19 @@ lazy-evaluation and class-based scoping.
 
 This is based on RSpec let(). Tutorials and documentation are forthcoming.
 
+INSTALLING
+====
+
+  gem install rlet
+
+Or from bundler
+
+  gem 'rlet'
+
+
+USAGE
+====
+
 The gems contain two modules, Let and Concern. You can use them like so:
 
   require 'rlet'
