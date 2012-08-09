@@ -13,7 +13,7 @@ module Let
 
   # Implementation based on Rspec let()
   #   https://github.com/rspec/rspec-core/blob/07be957b7f69447bf59ffe3ede9530436e6267ee/lib/rspec/core/let.rb
-  # Copyright of RSpec:
+  # License of RSpec:
   #   https://github.com/rspec/rspec-core/blob/07be957b7f69447bf59ffe3ede9530436e6267ee/License.txt
 
   private
