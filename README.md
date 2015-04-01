@@ -3,7 +3,7 @@
 This library contains a library for RSpec-style let() declartions for lazy evaluation,
 concerns, and a few functional operators.
 
-Unlike ruby-let, or what is proposed here http://www.opensourcery.com/blog/zack-hobson/objectlet-ruby-0
+Unlike ruby-let, or what is proposed here [https://www.opensourcery.com/blog/zack-hobson/objectlet-ruby](https://www.opensourcery.com/blog/zack-hobson/objectlet-ruby)
 this does not actually mimic the let of functional programming.
 
 Here, `let()` defines a method in the class. The values are memoized. This allows for both
