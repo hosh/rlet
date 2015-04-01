@@ -56,6 +56,7 @@ allows one to use concerns without having ActiveSupport as a dependency.
 Additionally, to expose `let()` with instance variables for use in templates, you can use `expose`
 
     require 'rlet'
+    require 'rlet/expose'
     
     class ContactsController
       include Let
