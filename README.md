@@ -53,6 +53,34 @@ The gems contain two modules, Let and Concern. You can use them like so:
 Concern is embedded from ActiveSupport. If ActiveSupport::Concern is loaded, it will use that. This
 allows one to use concerns without having ActiveSupport as a dependency.
 
+Additionally, to expose `let()` with instance variables for use in templates, you can use `expose`
+
+    require 'rlet'
+    require 'rlet/expose'
+    
+    class ContactsController
+      include Let
+      include RLet::Expose
+      include RestfulResource
+    
+      let(:model) { Contact }
+
+      expose :resource, only: :show
+    
+      def show
+        respond_with resource
+      end
+    end
+    
+    module RestfulResource
+      extend Concern
+    
+      included do
+        let(:resource) { model.find(id) }
+        let(:id) { params[:id] }
+      end
+    end
+
 ### LazyOptions
 
 One pattern that comes up is creating a class which takes an option as an initializer, and then
