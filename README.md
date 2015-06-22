@@ -1,6 +1,6 @@
 # rlet
 
-This library contains a library for RSpec-style let() declartions for lazy evaluation,
+This library contains a library for RSpec-style let() declarations for lazy evaluation,
 concerns, and a few functional operators.
 
 Unlike ruby-let, or what is proposed here [https://www.opensourcery.com/blog/zack-hobson/objectlet-ruby](https://www.opensourcery.com/blog/zack-hobson/objectlet-ruby)
@@ -11,7 +11,7 @@ lazy-evaluation and class-based scoping.
 
 By defining methods for lazy evaluation and grouping them into concerns, you can create
 mixins that can be shared across multiple objects. Lazy-eval lends itself to functional
-programming, so a small refinment is made available for use.
+programming, so a small refinement is made available for use.
 
 ## INSTALLING
 
@@ -50,8 +50,8 @@ The gems contain two modules, Let and Concern. You can use them like so:
       end
     end
 
-Concern is embedded from ActiveSupport. If ActiveSupport::Concern is loaded, it will use that. This
-allows one to use concerns without having ActiveSupport as a dependency.
+`Concern` is embedded from `ActiveSupport`. If `ActiveSupport::Concern` is loaded, it will use that. This
+allows one to use concerns without having `ActiveSupport` as a dependency.
 
 Additionally, to expose `let()` with instance variables for use in templates, you can use `expose`
 
@@ -169,7 +169,7 @@ We can refactor into:
       end
     end
 
-This pattern occurs so frequently that `rlet` not includes a `LazyOptions` concern.
+This pattern occurs so frequently that `rlet` now includes a `LazyOptions` concern.
 
     require 'rlet/lazy_options'
     module Intentions
