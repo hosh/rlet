@@ -6,7 +6,9 @@ module Let
   module ClassMethods
     def let(name, &block)
       define_method(name) do
-        __memoized[name] ||= instance_eval(&block)
+        __memoized[name].fetch do
+          __memoized[name] = instance_eval(&block)
+        end
       end
     end
   end
