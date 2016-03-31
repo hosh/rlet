@@ -81,6 +81,8 @@ Additionally, to expose `let()` with instance variables for use in templates, yo
       end
     end
 
+***DEPRECATION NOTICE*** Expose is not needed in Rails. Use `helper_method` instead
+
 ### LazyOptions
 
 One pattern that comes up is creating a class which takes an option as an initializer, and then
@@ -171,11 +173,10 @@ We can refactor into:
 
 This pattern occurs so frequently that `rlet` not includes a `LazyOptions` concern.
 
-    require 'rlet/lazy_options'
     module Intentions
       class Promise
         include Let
-        include LazyOptions
+        include RLet::LazyOptions
         extend Intentions::Concerns::Register
     
         let(:promiser)   { options[:promiser] }
