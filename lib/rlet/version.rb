@@ -1,3 +1,3 @@
-module Rlet
-  VERSION = "0.1.0"
+module RLet
+  VERSION = "0.8.0"
 end
