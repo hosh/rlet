@@ -1,3 +1,4 @@
+# DEPRECATED: Use helper_method instead
 # Include this module if you want to expose methods as instance
 # variables for Rails templates
 #
