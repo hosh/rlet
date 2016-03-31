@@ -8,6 +8,8 @@ describe Let do
     let(:memoized_false) { record.push(Time.now); false }
     let(:memoized_nil)   { record.push(Time.now); nil }
 
+    letp(:protected_let)  { true }
+
     def record
       @_record ||= []
     end
@@ -37,5 +39,14 @@ describe Let do
     expect(test_recorder.record.size).to eql(1)
     expect(test_recorder.memoized_nil).to eql(nil)
     expect(test_recorder.record.size).to eql(1)
+  end
+
+  context 'using letp' do
+    it 'should protect the defined method' do
+      expect(test_recorder.public_methods).not_to include(:protected_let)
+      expect(test_recorder.class.protected_instance_methods).to include(:protected_let)
+      expect(test_recorder.send(:protected_let)).to eql(true)
+    end
+
   end
 end

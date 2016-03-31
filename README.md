@@ -28,8 +28,6 @@ Or from bundler
 
 The gems contain two modules, Let and Concern. You can use them like so:
 
-    require 'rlet'
-    
     class ContactsController
       include Let
       include RestfulResource
@@ -49,6 +47,32 @@ The gems contain two modules, Let and Concern. You can use them like so:
         let(:id) { params[:id] }
       end
     end
+
+Normally, you want to expose the methods as public methods. Sometimes,
+you want to use protected methods. You can do so with `letp`:
+
+    class ContactsController
+      include Let
+      include RestfulResource
+    
+      letp(:model) { Contact }
+    
+      def show
+        respond_with resource
+      end
+    end
+    
+    module RestfulResource
+      extend Concern
+    
+      included do
+        letp(:resource) { model.find(id) }
+        letp(:id) { params[:id] }
+      end
+    end
+
+This is useful for Rails installation that still have dynamically inferred
+routes.
 
 Concern is embedded from ActiveSupport. If ActiveSupport::Concern is loaded, it will use that. This
 allows one to use concerns without having ActiveSupport as a dependency.

@@ -11,6 +11,11 @@ module Let
         end
       end
     end
+
+    def letp(name, &block)
+      let(name, &block)
+      protected(name)
+    end
   end
 
   # Implementation based on Rspec let()
