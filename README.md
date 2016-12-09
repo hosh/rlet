@@ -1,12 +1,10 @@
 # rlet
 
-This library contains a library for RSpec-style let() declartions for lazy evaluation,
-concerns, and a few functional operators.
+This library provides RSpec-style let() declartions for lazy evaluation, concerns, and
+a few functional operators.
 
-Unlike ruby-let, or what is proposed here [https://www.opensourcery.com/blog/zack-hobson/objectlet-ruby](https://www.opensourcery.com/blog/zack-hobson/objectlet-ruby)
-this does not actually mimic the let of functional programming.
-
-Here, `let()` defines a method in the class. The values are memoized. This allows for both
+Unlike ruby-let, this does not actually mimic the let of functional programming. Here,
+`let()` defines a method in the class. The values are memoized. This allows for both
 lazy-evaluation and class-based scoping.
 
 By defining methods for lazy evaluation and grouping them into concerns, you can create
@@ -195,7 +193,7 @@ We can refactor into:
       end
     end
 
-This pattern occurs so frequently that `rlet` not includes a `LazyOptions` concern.
+This pattern occurs so frequently that `rlet` now includes a `LazyOptions` concern.
 
     module Intentions
       class Promise
@@ -240,7 +238,7 @@ that adds in some operators.
 
 Currently, only two are supported: `|` which composes right, and `*` which composes left.
 
-The best example is when working with Intermodal presenters:
+The best example is when working with [Intermodal](https://github.com/intermodal/intermodal) presenters:
 
     require 'rlet/functional'
     
