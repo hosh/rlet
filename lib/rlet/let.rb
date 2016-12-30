@@ -10,11 +10,15 @@ module Let
           __memoized[name] = instance_eval(&block)
         end
       end
+
+      name
     end
 
     def letp(name, &block)
       let(name, &block)
       protected(name)
+
+      name
     end
   end
 
